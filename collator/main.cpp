@@ -13,8 +13,15 @@ int main(int argc, const char * argv[]) {
     int *a;
     int i,j,temp;
     int n;
-    scanf("%d",&n);
-    a=(int *)malloc(n*4);
+    printf("请输入个数：");
+    while(scanf("%d",&n)!=EOF)
+    {
+    if(n<=0)
+    {
+        exit(0);
+    }else
+    {
+        a=(int *)malloc(n*4);
     for(i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
@@ -33,8 +40,12 @@ int main(int argc, const char * argv[]) {
     }
     for(i=0;i<n;i++)
     {
-        printf("%d\n",a[i]);
+        printf("%d ",a[i]);
     }
+        printf("\n");
+        printf("请再次输入个数：");
     free(a);
-    return 0;
+    }
+    }
+        return 0;
 }
