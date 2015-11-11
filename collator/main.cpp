@@ -7,13 +7,18 @@
 //
 
 #include <iostream>
-#define n 5
+
 int main(int argc, const char * argv[]) {
     // insert code here...
-    int a[n];
+    int *a;
     int i,j,temp;
+    int n;
+    scanf("%d",&n);
+    a=(int *)malloc(n*4);
     for(i=0;i<n;i++)
+    {
         scanf("%d",&a[i]);
+    }
     for(i=0;i<n-1;i++)
     {
         for(j=0;j<n-1-i;i++)
@@ -24,13 +29,12 @@ int main(int argc, const char * argv[]) {
                 a[j]=a[j+1];
                 a[j+1]=temp;
             }
-            
         }
-    
     }
     for(i=0;i<n;i++)
     {
         printf("%d\n",a[i]);
     }
+    free(a);
     return 0;
 }
